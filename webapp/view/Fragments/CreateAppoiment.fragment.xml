@@ -31,8 +31,9 @@
             <f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="true" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
                 <f:content>
                     <Label text="Tipo Reperibilità" />
-                    <Select forceSelection="false" editable="{modello>/edit}" selectedKey="{modello>/tiporeperibilitakey}" selectedItem="{modello>/tipo_trasferta}" required="true">
-                        <core:Item text="01" key="01" />
+
+                    <Select forceSelection="false" showSecondaryValues="true" editable="{modello>/edit}" selectedKey="{modello>/tiporeperibilitakey}" selectedItem="{modello>/tipo_trasferta}" items="{ path: 'modello>/tipiReperibilit' }" required="true">
+                        <core:ListItem text="{modello>code}" additionalText="{modello>type}" key="{modello>code}"/>
                     </Select>
                     <Label text="" />
                     <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">

@@ -3,18 +3,11 @@
     xmlns:layout="sap.ui.layout"
     xmlns:fb="sap.ui.comp.filterbar"
     xmlns:core="sap.ui.core">
-    <!-- <layout:HorizontalLayout allowWrapping="false"> -->
     <fb:FilterBar useToolbar="false" search=".onSearch" showAllFilters="true" clear=".onClear" advancedMode="false" showFilterConfiguration="false" showClearOnFB="true">
         <fb:filterGroupItems>
             <fb:FilterGroupItem name="Mese" label="Mese" groupName="Group1" visibleInFilterBar="true">
                 <fb:control>
-                    <!-- <DatePicker id="month" value="{
-                                    'path': 'modello>/anno',
-                                    'type': 'sap.ui.model.type.Date',
-                                    'formatOptions': {
-                                    'pattern': 'MM/yyyy'} 
-                        }" class="sapUiSmallMarginBottom" /> -->
-                    <Select showSecondaryValues= "true" forceSelection="true" selectedKey="{modello>/meseSelected}" items="{ path: 'modello>/listaMesi' }" class="sapUiSmallMarginBottom" >
+                    <Select showSecondaryValues= "true" forceSelection="true" selectedKey="{modello>/meseSelected}" items="{ path: 'modello>/listaMesi' }" class="sapUiSmallMarginBottom">
                         <core:ListItem text="{modello>numero}" additionalText="{modello>mese}" key="{modello>numero}"/>
                     </Select>
                 </fb:control>

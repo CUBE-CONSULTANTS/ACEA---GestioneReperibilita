@@ -5,7 +5,7 @@
     xmlns:unified="sap.ui.unified"
     xmlns:layout="sap.ui.layout"
     xmlns="sap.m">
-    <f:DynamicPage class="ColorBack" headerExpanded="true" toggleHeaderOnTitleClick="false" showFooter="true">
+    <f:DynamicPage class="sapUiNoMargin sapUiNoContentPadding" headerExpanded="true" toggleHeaderOnTitleClick="false" showFooter="true">
         <f:title>
             <f:DynamicPageTitle>
                 <f:heading>

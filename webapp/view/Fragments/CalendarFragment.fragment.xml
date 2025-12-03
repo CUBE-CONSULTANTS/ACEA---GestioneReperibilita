@@ -4,8 +4,8 @@
     xmlns:l="sap.ui.layout"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:unified="sap.ui.unified">
-    <l:DynamicSideContent id="DynamicSideContent" class="sapUiDSCExplored sapUiContentPadding" sideContentVisibility="AlwaysShow" showSideContent="{path: 'stateModel>/legendShown'}" containerQuery="true">
-        <VBox class="sapUiSmallMargin">
+    <l:DynamicSideContent id="DynamicSideContent" sideContentVisibility="AlwaysShow" showSideContent="{path: 'stateModel>/legendShown'}" containerQuery="true" class="noMargin">
+        <VBox width="100%" >
             <PlanningCalendar singleSelection="true" legend="PlanningCalendarLegend" viewKey="D" id="PC1" startDate="{path: '/startDate'}" rows="{path: '/people'}" appointmentSelect="openDialog" rowSelectionChange="onSelectRow">
                 <toolbarContent>
                     <Title text="Reperibilità" titleStyle="H5"/>

@@ -23,10 +23,24 @@ sap.ui.define([
         initModel: function () {
             this.getView().setModel(new sap.ui.model.json.JSONModel({
                 anno: new Date(),
-                mese: new Date(),
+                meseSelected: `${new Date().getMonth()+1}`,
                 tiporeperibilitakey: null,
                 edit: false,
                 modify: null,
+                listaMesi: [
+                    { "mese": "Gennaio", "numero": "01" },
+                    { "mese": "Febbraio", "numero": "02" },
+                    { "mese": "Marzo", "numero": "03" },
+                    { "mese": "Aprile", "numero": "04" },
+                    { "mese": "Maggio", "numero": "05" },
+                    { "mese": "Giugno", "numero": "06" },
+                    { "mese": "Luglio", "numero": "07" },
+                    { "mese": "Agosto", "numero": "08" },
+                    { "mese": "Settembre", "numero": "09" },
+                    { "mese": "Ottobre", "numero": "10" },
+                    { "mese": "Novembre", "numero": "11" },
+                    { "mese": "Dicembre", "numero": "12" }
+                ]
             }), "modello")
         },
         initModelCalendar: function () {
@@ -143,6 +157,13 @@ sap.ui.define([
                             {
                                 start: UI5Date.getInstance("2025", "11", "24", "00", "00"),
                                 end: UI5Date.getInstance("2025", "11", "24", "24", "00"),
+                                title: "Reperibilità",
+                                info: "01",
+                                type: "Type08",
+                            },
+                            {
+                                start: UI5Date.getInstance("2025", "11", "20", "00", "00"),
+                                end: UI5Date.getInstance("2025", "11", "20", "24", "00"),
                                 title: "Reperibilità",
                                 info: "01",
                                 type: "Type08",

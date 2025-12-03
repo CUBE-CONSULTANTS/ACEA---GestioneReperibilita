@@ -146,13 +146,6 @@ sap.ui.define([
                                 title: "Reperibilità",
                                 info: "01",
                                 type: "Type08",
-                            },
-                            {
-                                start: UI5Date.getInstance("2025", "11", "20", "00", "00"),
-                                end: UI5Date.getInstance("2025", "11", "20", "24", "00"),
-                                title: "Reperibilità",
-                                info: "01",
-                                type: "Type08",
                             }
                         ]
                     }

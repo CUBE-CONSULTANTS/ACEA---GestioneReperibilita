@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core">
+    <!-- <layout:HorizontalLayout allowWrapping="false"> -->
+        <fb:FilterBar useToolbar="false" search=".onSearch" showAllFilters="true" clear=".onClear" advancedMode="false" showFilterConfiguration="false" showClearOnFB="true">
+            <fb:filterGroupItems>
+                <fb:FilterGroupItem name="Mese" label="Mese" groupName="Group1" visibleInFilterBar="true">
+                    <fb:control>
+                        <DatePicker id="month" value="{
+                                    'path': 'modello>/anno',
+                                    'type': 'sap.ui.model.type.Date',
+                                    'formatOptions': {
+                                    'pattern': 'MM/yyyy'} 
+                        }" class="sapUiSmallMarginBottom" />
+                    </fb:control>
+                </fb:FilterGroupItem>
+                <fb:FilterGroupItem name="Anno" label="Anno" groupName="Group1" visibleInFilterBar="true">
+                    <fb:control>
+                        <DatePicker id="datePicker" value="{
+                                                'path': 'modello>/anno',
+                                                'type': 'sap.ui.model.type.Date',
+                                                'formatOptions': {
+                                                    'pattern': 'yyyy'
+                                                } 
+                        }" class="sapUiSmallMarginBottom" />
+                    </fb:control>
+                </fb:FilterGroupItem>
+            </fb:filterGroupItems>
+        </fb:FilterBar>
+</core:FragmentDefinition>

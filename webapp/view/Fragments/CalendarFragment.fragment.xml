@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:unified="sap.ui.unified">
+    <l:DynamicSideContent id="DynamicSideContent" class="sapUiDSCExplored sapUiContentPadding" sideContentVisibility="AlwaysShow" showSideContent="{path: 'stateModel>/legendShown'}" containerQuery="true">
+        <VBox class="sapUiSmallMargin">
+            <PlanningCalendar singleSelection="true" legend="PlanningCalendarLegend" viewKey="D" id="PC1" startDate="{path: '/startDate'}" rows="{path: '/people'}" appointmentSelect="openDialog" rowSelectionChange="onSelectRow">
+                <toolbarContent>
+                    <Title text="Reperibilità" titleStyle="H5"/>
+                    <ToggleButton pressed="{path: 'stateModel>/legendShown'}" icon="sap-icon://legend"/>
+                    <Button icon="sap-icon://add" type="Emphasized" text="Crea" tooltip="Crea" press="openDialog" id="createElement" enabled="false">
+                        <customData>
+                            <core:CustomData key="Create"/>
+                        </customData>
+                    </Button>
+                </toolbarContent>
+                <views>
+                    <PlanningCalendarView key="D" intervalType="Day" />
+                </views>
+                <rows>
+                    <PlanningCalendarRow icon="{pic}" title="{name}" enableAppointmentsCreate="true" appointmentCreate="handleAppointmentCreate" appointments="{path : 'appointments', templateShareable: false}">
+                        <appointments>
+                            <unified:CalendarAppointment startDate="{start}" endDate="{end}" icon="{pic}" title="{title}" text="{info}" type="{type}" tentative="{tentative}">
+                            </unified:CalendarAppointment>
+                        </appointments>
+                    </PlanningCalendarRow>
+                </rows>
+            </PlanningCalendar>
+        </VBox>
+        <l:sideContent >
+            <PlanningCalendarLegend id="PlanningCalendarLegend" items="{path : '/legendItems', templateShareable: true}" appointmentItems="{path : '/legendAppointmentItems', templateShareable: true}" standardItems="Today,Selected,NonWorkingDay">
+                <items>
+                    <unified:CalendarLegendItem text="{text}" type="{type}" tooltip="{text}" color="{color}"/>
+                </items>
+                <appointmentItems>
+                    <unified:CalendarLegendItem text="{text}" type="{type}" tooltip="{text}" />
+                </appointmentItems>
+            </PlanningCalendarLegend>
+        </l:sideContent>
+    </l:DynamicSideContent>
+</core:FragmentDefinition>

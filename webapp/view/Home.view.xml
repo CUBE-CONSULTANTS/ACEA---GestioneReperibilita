@@ -1,0 +1,32 @@
+<mvc:View controllerName="gestionereperibilita.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:unified="sap.ui.unified"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m">
+    <f:DynamicPage class="ColorBack" headerExpanded="true" toggleHeaderOnTitleClick="false" showFooter="true">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Gestione Reperibilità"/>
+                </f:heading>
+                <f:actions>
+                    <Image src="{
+                                value: 'gestionereperibilita/public/LOGO_ATOH.png',
+                                formatter: 'sap.ui.require.toUrl'
+                            }" width="80px" class="sapUiTinyMarginStart"/>
+                </f:actions>
+
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="false">
+                <core:Fragment fragmentName="gestionereperibilita.view.Fragments.FilterFragment" type="XML" />
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <core:Fragment fragmentName="gestionereperibilita.view.Fragments.CalendarFragment" type="XML" />
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

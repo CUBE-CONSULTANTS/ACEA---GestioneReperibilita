@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+    xmlns:ce="sap.ui.codeeditor"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:unified="sap.ui.unified"
+    xmlns:core="sap.ui.core"
+    xmlns:table="sap.ui.table">
+    <Dialog id="modifyDialog" title="Title">
+        <customHeader>
+            <Bar>
+                <contentMiddle>
+                    <Title text="Creazione Reperibilità" />
+                </contentMiddle>
+                <contentRight>
+                    <Button icon="sap-icon://decline" type="Transparent" press="handleDialogCancelButton" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button text="Cancella" tooltip="Cancella" type="Reject" icon="sap-icon://delete" press="handleDialogDeleteButton" visible="{=${modello>/edit}===true ? false : true}"/>
+                <Button text="Modifica" tooltip="modifica" type="Emphasized" icon="sap-icon://edit" press="handleDialogChangeButton" visible="{=${modello>/edit}===true ? false : true}"/>
+                <Button text="Salva" type="Emphasized" press="handleDialogOkButton" icon="sap-icon://save" visible="{=${modello>/edit}===true ? true : false}"/>
+
+            </OverflowToolbar>
+        </footer>
+        <l:VerticalLayout class="sapUiContentPadding" width="100%">
+            <f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="true" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                <f:content>
+                    <Label text="Tipo Reperibilità" />
+                    <Select forceSelection="false" editable="{modello>/edit}" selectedKey="{modello>/tiporeperibilitakey}" selectedItem="{modello>/tipo_trasferta}" required="true">
+                        <core:Item text="01" key="01" />
+                    </Select>
+                    <Label text="" />
+                    <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">
+                        <VBox >
+                            <Label text="Inizio Validità" required="true"/>
+                            <DatePicker editable="{modello>/edit}" value="{modello>/data_inizio}" showCurrentDateButton="true" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/yyyy" placeholder="Inizio Validità" change="handleChange" class="sapUiSmallMarginBottom" />
+                        </VBox>
+                        <VBox >
+                            <Label text="Fine Validità" required="true"/>
+                            <DatePicker editable="{modello>/edit}" value="{modello>/data_fine}" showCurrentDateButton="true" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/yyyy" placeholder="Fine Validità" change="handleChange" class="sapUiSmallMarginBottom"/>
+                        </VBox>
+                    </HBox>
+                </f:content>
+            </f:SimpleForm>
+        </l:VerticalLayout>
+    </Dialog>
+</core:FragmentDefinition>
